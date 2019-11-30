@@ -1,0 +1,30 @@
+const express = require('express');
+const Request = require('request');
+const router = express.Router();
+
+let sumBytes = 0;
+
+router.get("/", readBytes);
+
+function readBytes(req, res) {
+    res.json(sumBytes);
+}
+
+setTimeout(readQueue, 500);
+
+function readQueue() {
+    setTimeout(readQueue, 500);
+
+    Request.get({
+        url: 'http://127.0.0.1:3000/queue',
+        json: true
+    }, queueAntwort);
+
+    function queueAntwort(err, resp, body) {
+        if (resp.statusCode === 200) {
+            sumBytes += body.bytes;
+        }
+    }
+}
+
+module.exports = router;
