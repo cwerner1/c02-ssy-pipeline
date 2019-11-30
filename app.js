@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 // Load routes into variables
 const index = require('./routes/index');
+const queue = require('./routes/queue');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Configure routes in Express webserver
 app.use('/', index);
+app.use('/queue', queue);
 
 
 // catch 404 and forward to error handler
