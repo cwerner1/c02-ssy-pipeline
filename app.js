@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const index = require('./routes/index');
 const queue = require('./routes/queue');
 const byteCounter = require('./routes/byteCounter');
+const hostCounter = require('./routes/hostCounter');
 const pubsub = require('./routes/pubsub');
 
 const app = express();
@@ -26,6 +27,7 @@ app.use('/', index);
 app.use('/queue', queue);
 app.use('/pubsub', pubsub);
 app.use('/byte-counter', byteCounter);
+app.use('/host-counter', hostCounter);
 
 
 // catch 404 and forward to error handler
