@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const index = require('./routes/index');
 const queue = require('./routes/queue');
 const byteCounter = require('./routes/byteCounter');
+const pubsub = require('./routes/pubsub');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Configure routes in Express webserver
 app.use('/', index);
 app.use('/queue', queue);
+app.use('/pubsub', pubsub);
 app.use('/byte-counter', byteCounter);
 
 

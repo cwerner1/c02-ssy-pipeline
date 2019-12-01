@@ -10,7 +10,17 @@ function readBytes(req, res) {
     res.json(sumBytes);
 }
 
-setTimeout(readQueue, 500);
+
+router.post("/", newLogEntry);
+
+function newLogEntry(req, res) {
+    sumBytes += req.body.bytes;
+    res.status(200).end();
+}
+
+
+
+// setTimeout(readQueue, 500);
 
 function readQueue() {
     setTimeout(readQueue, 500);
