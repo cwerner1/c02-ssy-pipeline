@@ -3,7 +3,7 @@ const fs = require('fs');
 const date = require('date-and-time');
 
 // Default: 1 Eintrag pro Sekunde (1000ms)
-const postDelay = process.argv.length < 3 ? 30 : Number(process.argv[2]);
+const postDelay = process.argv.length < 3 ? 750 : Number(process.argv[2]);
 
 // Wir lesen die gesamte Log-Datei synchron ein und splitten sie gleich in ein Array von Zeilen auf
 const logLines = fs.readFileSync(__dirname + '/../example.log').toString().split('\n');

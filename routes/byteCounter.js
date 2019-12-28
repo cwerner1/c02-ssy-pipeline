@@ -29,7 +29,6 @@ function readQueue() {
 }
 
 function newLogentry(req, res) {
-console.log("sub");
     sumBytes += req.body.bytes;
     res.status(200).end();
 }
