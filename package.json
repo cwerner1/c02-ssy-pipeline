@@ -21,6 +21,6 @@
   },
   "devDependencies": {
     "date-and-time": "^0.14.2",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.8"
   }
 }
